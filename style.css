@@ -1,0 +1,90 @@
+/* GLOBAL RESETS */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Inter', sans-serif;
+    color: #334155;
+    line-height: 1.6;
+    background-color: #f8fafc;
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3, .brand { font-family: 'Merriweather', serif; color: #0f172a; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* NAVIGATION */
+nav { background: white; padding: 20px 0; border-bottom: 1px solid #e2e8f0; }
+.nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+.brand { font-size: 1.5rem; font-weight: 700; color: #0f172a; }
+.nav-links { list-style: none; display: flex; gap: 30px; align-items: center; }
+.nav-links a { text-decoration: none; color: #64748b; font-weight: 500; }
+.btn-nav { border: 2px solid #0f172a; padding: 8px 16px; border-radius: 4px; color: #0f172a !important; transition: 0.3s; }
+.btn-nav:hover { background: #0f172a; color: white !important; }
+
+/* HERO SECTION */
+.hero { padding: 80px 0; background: white; }
+.hero-content { display: flex; align-items: center; gap: 50px; }
+.hero-text h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 20px; }
+.subtitle { font-size: 1.1rem; color: #64748b; margin-bottom: 30px; max-width: 500px; }
+
+/* Badges (The "Air Gap" flex) */
+.hero-badges { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+.badge { background: #f1f5f9; color: #475569; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #cbd5e1; }
+
+.btn-primary { display: inline-block; background: #0f172a; color: white; padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: 600; transition: 0.3s; }
+.btn-primary:hover { background: #1e293b; transform: translateY(-2px); }
+
+/* PROFILE IMAGE (Circle Crop) */
+.hero-image-wrapper img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid white;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* BEFORE/AFTER SLIDER */
+.comparison-section { padding: 80px 0; background: #f8fafc; text-align: center; }
+.section-header { margin-bottom: 40px; }
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 500px; /* Adjust based on your image size */
+    margin: 0 auto;
+    border: 5px solid white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.image-wrapper { position: relative; width: 100%; height: 100%; }
+.image-wrapper img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; }
+.image-before-wrapper {
+    position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden; border-right: 3px solid white; z-index: 2;
+}
+.image-before { width: 800px; /* Must match container max-width */ max-width: none; }
+.slider-handle {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 40px; height: 40px; background: white; border-radius: 50%; z-index: 3;
+    display: flex; align-items: center; justify-content: center; cursor: ew-resize;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3); color: #0f172a; font-weight: bold;
+}
+
+/* SERVICES GRID */
+.services { padding: 80px 0; background: white; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+.card { padding: 30px; border: 1px solid #e2e8f0; border-radius: 8px; transition: 0.3s; }
+.card:hover { border-color: #94a3b8; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+.card h3 { margin-bottom: 15px; color: #0f172a; }
+
+/* FOOTER */
+footer { background: #0f172a; color: white; text-align: center; padding: 80px 0; }
+.btn-white { display: inline-block; background: white; color: #0f172a; padding: 12px 25px; text-decoration: none; border-radius: 6px; font-weight: 600; margin: 20px 0; }
+.copyright { color: #94a3b8; font-size: 0.9rem; margin-top: 40px; }
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-content { flex-direction: column-reverse; text-align: center; }
+    .nav-links { display: none; } /* Simplified for mobile */
+    .hero-text h1 { font-size: 2rem; }
+}
