@@ -8,23 +8,25 @@
 </head>
 <body>
     <header>
-        <nav>
+        <div class="container nav-flex">
             <div class="logo">
                 <img src="profile.jpg" alt="Nathaniel Hardwick" class="profile-img">
                 <span>Hardwick Analytics</span>
             </div>
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#capabilities">Capabilities</a></li>
-                <li><a href="mailto:nathanielhardwick@gmail.com">Contact</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#capabilities">Capabilities</a></li>
+                    <li><a href="mailto:nathanielhardwick@gmail.com">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section class="hero">
-        <div class="hero-content">
+        <div class="container">
             <h1>Secure AI & Enterprise Geospatial Architecture</h1>
-            <p>Bridging the gap between legacy utility infrastructure and sovereign, air-gapped intelligence[cite: 6, 19].</p>
+            <p>Bridging the gap between legacy utility infrastructure and sovereign, air-gapped intelligence.</p>
             <div class="cta-buttons">
                 <a href="#services" class="btn-primary">View Services</a>
                 <a href="Capability_Statement.pdf" class="btn-secondary" download>Download Capability Statement</a>
@@ -33,40 +35,46 @@
     </section>
 
     <section id="services" class="services">
-        <h2>Specialized Consulting Services [cite: 51]</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <h3>Sovereign AI Deployment</h3>
-                <p>Engineering secure, on-premise Large Language Model (LLM) environments for sensitive data without cloud exposure[cite: 19].</p>
-            </div>
-            <div class="service-card">
-                <h3>Enterprise GIS Strategy</h3>
-                <p>Architecting high-availability Esri ArcGIS and PostGIS environments for critical asset management[cite: 49, 52].</p>
-            </div>
-            <div class="service-card">
-                <h3>Infrastructure as Code</h3>
-                <p>Deploying containerized geospatial stacks (Docker) to ensure 100% environment parity and eliminate system dependency conflicts[cite: 20, 38].</p>
+        <div class="container">
+            <h2 class="section-title">Specialized Consulting Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Sovereign AI Deployment</h3>
+                    <p>Engineering secure, on-premise Large Language Model (LLM) environments for sensitive data without cloud exposure[cite: 8, 19].</p>
+                </div>
+                <div class="service-card">
+                    <h3>Enterprise GIS Strategy</h3>
+                    <p>Architecting high-availability Esri ArcGIS and PostGIS environments for critical asset management[cite: 16, 25].</p>
+                </div>
+                <div class="service-card">
+                    <h3>Infrastructure as Code</h3>
+                    <p>Deploying containerized geospatial stacks (Docker) to ensure 100% environment parity across teams[cite: 20, 38].</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="capabilities" class="capabilities">
         <div class="container">
-            <h2>Operational Impact</h2>
-            <div class="cap-item">
-                <strong>Automated Intelligence:</strong> Reduced manual research time by 40% through custom OCR and RAG pipelines[cite: 21, 50].
-            </div>
-            <div class="cap-item">
-                <strong>Data Integrity:</strong> Tier-3 technical lead for complex database and integration failures[cite: 28, 29].
-            </div>
-            <div class="cap-item">
-                <strong>Proven Scale:</strong> Over 15 years of experience modernizing fiber and electric utility infrastructure[cite: 6, 13, 15].
+            <h2 class="section-title">Operational Impact</h2>
+            <div class="cap-list">
+                <div class="cap-item">
+                    <strong>Automated Intelligence:</strong> Reduced manual research time by 40% through custom OCR and RAG pipelines[cite: 21].
+                </div>
+                <div class="cap-item">
+                    <strong>Data Integrity:</strong> Tier-3 technical lead for complex database and integration failures[cite: 28, 29].
+                </div>
+                <div class="cap-item">
+                    <strong>Proven Scale:</strong> Over 15 years of experience modernizing fiber and electric utility infrastructure[cite: 6].
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Hardwick Analytics | Shawnee, OK | nathanielhardwick@gmail.com [cite: 2]</p>
+        <div class="container">
+            <p>&copy; 2026 Hardwick Analytics | Shawnee, OK | nathanielhardwick@gmail.com [cite: 2]</p>
+        </div>
     </footer>
 </body>
 </html>
