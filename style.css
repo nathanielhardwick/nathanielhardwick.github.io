@@ -13,8 +13,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-
 header { padding: 25px 0; border-bottom: 1px solid #eee; background: #fff; width: 100%; }
 .header-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
 .brand { display: flex; align-items: center; }
-.avatar { width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--blue); margin-right: 20px; object-fit: cover; flex-shrink: 0; }
-.brand-text h1 { font-size: 1.7rem; color: var(--blue); margin: 0; }
+.avatar { width: 90px; height: 90px; border-radius: 50%; border: 3px solid var(--blue); margin-right: 20px; object-fit: cover; flex-shrink: 0; }
+.brand-text h1 { font-size: 1.6rem; color: var(--blue); margin: 0; }
 .brand-text p { font-size: 0.85rem; color: var(--gray); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
 nav ul { display: flex; list-style: none; gap: 20px; }
@@ -22,56 +22,54 @@ nav a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 
 
 /* Hero */
 .hero { background: var(--bg); padding: 80px 0; text-align: center; }
-.hero h2 { font-size: 2.8rem; margin-bottom: 20px; line-height: 1.2; }
-.hero p { font-size: 1.3rem; color: var(--gray); max-width: 800px; margin: 0 auto 35px; }
+.hero h2 { font-size: 2.6rem; margin-bottom: 20px; line-height: 1.2; }
+.hero p { font-size: 1.25rem; color: var(--gray); max-width: 800px; margin: 0 auto 35px; }
 .btn-blue { background: var(--blue); color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: 700; display: inline-block; margin: 5px; }
 .btn-outline { border: 2px solid var(--blue); color: var(--blue); padding: 12px 26px; text-decoration: none; border-radius: 6px; font-weight: 700; display: inline-block; margin: 5px; }
 
-/* RECTANGULAR SLIDER BOX */
+/* RECTANGULAR DIVIDER WITH CIRCLE HANDLE */
 .portfolio { padding: 80px 0; }
 .title { text-align: center; font-size: 2.2rem; margin-bottom: 10px; }
 .subtitle { text-align: center; color: var(--gray); margin-bottom: 40px; }
 .slider-box { position: relative; width: 100%; aspect-ratio: 16 / 9; max-height: 500px; border-radius: 12px; overflow: hidden; border: 1px solid #ddd; margin: 0 auto; background: #000; }
 .slider-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
 .slider-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.front { width: 50%; z-index: 2; overflow: hidden; }
 
-/* BEFORE layer on the left */
-.front { width: 50%; z-index: 2; overflow: hidden; border-right: 4px solid #fff; }
-
-/* The Rectangular White Handle */
-.slider-bar {
+/* The Rectangular Divider Line */
+.slider-divider {
     position: absolute;
     top: 0;
     left: 50%;
-    width: 8px;
+    width: 6px;
     height: 100%;
     background: #fff;
     transform: translateX(-50%);
     z-index: 11;
-    box-shadow: 0 0 12px rgba(0,0,0,0.4);
     pointer-events: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-/* Range input spanning the full box */
-.slider-handle { 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    -webkit-appearance: none; 
-    background: transparent; 
-    z-index: 15; 
-    cursor: ew-resize; 
-    margin: 0; 
+/* The Grab Handle Circle */
+.handle-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blue);
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
-/* This makes the actual 'clickable' part invisible but present */
-.slider-handle::-webkit-slider-thumb { 
-    -webkit-appearance: none; 
-    width: 40px; 
-    height: 1000px; 
-    background: transparent; 
-}
+
+.slider-handle { position: absolute; top: 0; left: 0; width: 100%; height: 100%; -webkit-appearance: none; background: transparent; z-index: 15; cursor: ew-resize; margin: 0; }
+.slider-handle::-webkit-slider-thumb { -webkit-appearance: none; width: 40px; height: 1000px; background: transparent; }
 
 /* Services */
 .services { padding: 80px 0; background: var(--bg); }
@@ -81,11 +79,10 @@ nav a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 
 
 footer { padding: 50px 0; text-align: center; border-top: 1px solid #eee; font-size: 1rem; color: var(--gray); }
 
-/* MOBILE RESPONSIVE OVERRIDES */
 @media (max-width: 768px) {
     .header-flex { flex-direction: column; text-align: center; }
     .brand { flex-direction: column; }
     .avatar { margin: 0 0 15px 0; width: 120px; height: 120px; }
-    .slider-box { height: 300px; }
-    .slider-bar { width: 6px; }
+    .slider-box { height: 300px; aspect-ratio: auto; } /* Forces height on mobile */
+    .slider-img img { height: 300px; }
 }
