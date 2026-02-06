@@ -8,10 +8,13 @@
 </head>
 <body>
     <header>
-        <div class="container nav-flex">
-            <div class="logo">
-                <img src="profile.jpg" alt="Nathaniel Hardwick" class="profile-img">
-                <span>Hardwick Analytics</span>
+        <div class="container header-flex">
+            <div class="profile-block">
+                <img src="profile.jpg" alt="Nathaniel Hardwick" class="profile-pic">
+                <div class="logo-text">
+                    <h1>Nathaniel Hardwick, M.S.</h1>
+                    <p>Geospatial Solutions Architect</p>
+                </div>
             </div>
             <nav>
                 <ul>
@@ -25,44 +28,44 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Secure AI & Enterprise Geospatial Architecture</h1>
+            <h2>Secure AI & Enterprise Geospatial Architecture</h2>
             <p>Bridging the gap between legacy infrastructure and sovereign, air-gapped intelligence.</p>
-            <div class="cta-buttons">
-                <a href="#services" class="btn-primary">View Services</a>
-                <a href="Capability_Statement.pdf" class="btn-secondary" download>Download Capability Statement</a>
+            <div class="btn-group">
+                <a href="#services" class="btn-solid">View Services</a>
+                <a href="Capability_Statement.pdf" class="btn-line" download>Download Capability Statement</a>
             </div>
         </div>
     </section>
 
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2>From Archive to Intelligence</h2>
-            <p>Deep Learning automation transforming historical PDF easements into vectorized spatial data.</p>
-            <div class="slider-wrapper">
-                <div class="img background-img">
-                    <img src="map-old.jpg" alt="Legacy Map">
+            <h2 class="title">From Archive to Intelligence</h2>
+            <p class="subtitle">Deep Learning automation transforming historical PDF easements into vectorized spatial data.</p>
+            <div class="slider-box">
+                <div class="img-layer back-img">
+                    <img src="map-old.jpg" alt="Legacy Archive">
                 </div>
-                <div class="img foreground-img">
-                    <img src="map-new.jpg" alt="Digital Vector">
+                <div class="img-layer front-img" id="front-image">
+                    <img src="map-new.jpg" alt="Modern Vector">
                 </div>
-                <input type="range" min="1" max="100" value="50" class="slider" id="map-slider">
+                <input type="range" min="0" max="100" value="50" class="slider-input" id="map-slider">
             </div>
         </div>
     </section>
 
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Consulting Services</h2>
-            <div class="service-grid">
-                <div class="service-card">
+            <h2 class="title">Consulting Services</h2>
+            <div class="card-grid">
+                <div class="card">
                     <h3>Sovereign AI Deployment</h3>
                     <p>On-premise LLM environments for sensitive utility data, ensuring zero cloud exposure.</p>
                 </div>
-                <div class="service-card">
+                <div class="card">
                     <h3>Enterprise GIS Strategy</h3>
                     <p>High-availability ArcGIS and PostGIS architecture for critical asset management.</p>
                 </div>
-                <div class="service-card">
+                <div class="card">
                     <h3>Infrastructure as Code</h3>
                     <p>Containerized stacks ensuring 100% parity across engineering teams.</p>
                 </div>
@@ -78,9 +81,9 @@
 
     <script>
         const slider = document.getElementById('map-slider');
-        const foreground = document.querySelector('.foreground-img');
+        const front = document.getElementById('front-image');
         slider.addEventListener('input', (e) => {
-            foreground.style.width = e.target.value + '%';
+            front.style.width = e.target.value + '%';
         });
     </script>
 </body>
