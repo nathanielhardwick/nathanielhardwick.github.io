@@ -27,41 +27,33 @@ nav a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 
 .btn-blue { background: var(--blue); color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: 700; display: inline-block; margin: 5px; }
 .btn-outline { border: 2px solid var(--blue); color: var(--blue); padding: 12px 26px; text-decoration: none; border-radius: 6px; font-weight: 700; display: inline-block; margin: 5px; }
 
-/* SLIDER RE-ENGINEERED WITH BUTTON */
+/* RECTANGULAR SLIDER */
 .portfolio { padding: 80px 0; }
 .title { text-align: center; font-size: 2.2rem; margin-bottom: 10px; }
 .subtitle { text-align: center; color: var(--gray); margin-bottom: 40px; }
 .slider-box { position: relative; width: 100%; aspect-ratio: 16 / 9; max-height: 500px; border-radius: 12px; overflow: hidden; border: 1px solid #ddd; margin: 0 auto; background: #000; }
 .slider-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
 .slider-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.front { width: 50%; border-right: 4px solid #fff; z-index: 2; overflow: hidden; }
 
-/* Visible Slider Button */
-.slider-button {
+/* The 'Front' layer (Old Map) starts at 50% width */
+.front { width: 50%; z-index: 2; overflow: hidden; border-right: 4px solid #fff; }
+
+/* Rectangular Handle */
+.slider-bar {
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 50%;
-    width: 44px;
-    height: 44px;
+    width: 6px;
+    height: 100%;
     background: #fff;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     z-index: 11;
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     pointer-events: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.slider-button::after {
-    content: "↔";
-    color: var(--blue);
-    font-weight: bold;
-    font-size: 20px;
 }
 
 .slider-handle { position: absolute; top: 0; left: 0; width: 100%; height: 100%; -webkit-appearance: none; background: transparent; z-index: 10; cursor: ew-resize; margin: 0; }
-.slider-handle::-webkit-slider-thumb { -webkit-appearance: none; width: 44px; height: 500px; background: transparent; cursor: ew-resize; }
+.slider-handle::-webkit-slider-thumb { -webkit-appearance: none; width: 40px; height: 1000px; background: transparent; cursor: ew-resize; }
 
 /* Services */
 .services { padding: 80px 0; background: var(--bg); }
@@ -75,7 +67,5 @@ footer { padding: 50px 0; text-align: center; border-top: 1px solid #eee; font-s
     .header-flex { flex-direction: column; text-align: center; }
     .brand { flex-direction: column; }
     .avatar { margin: 0 0 15px 0; width: 120px; height: 120px; }
-    .hero h2 { font-size: 2rem; }
     .slider-box { height: 300px; }
-    .slider-handle::-webkit-slider-thumb { height: 300px; }
 }
