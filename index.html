@@ -49,7 +49,9 @@
                     <img src="before.jpg" alt="Legacy Archive">
                 </div>
                 <input type="range" min="0" max="100" value="50" class="slider-handle" id="range-slider">
-                <div class="slider-bar" id="slider-bar"></div>
+                <div class="slider-divider" id="slider-divider">
+                    <div class="handle-circle">↔</div>
+                </div>
             </div>
         </div>
     </section>
@@ -66,7 +68,7 @@
                     <h3>Enterprise GIS Strategy</h3>
                     <p>High-availability ArcGIS and PostGIS architecture for critical asset management.</p>
                 </div>
-                <div class="card :last-child">
+                <div class="card">
                     <h3>Infrastructure as Code</h3>
                     <p>Containerized stacks ensuring 100% parity across engineering teams.</p>
                 </div>
@@ -83,12 +85,12 @@
     <script>
         const slider = document.getElementById('range-slider');
         const front = document.getElementById('front-image');
-        const bar = document.getElementById('slider-bar');
+        const divider = document.getElementById('slider-divider');
         
         slider.addEventListener('input', (e) => {
             const val = e.target.value;
             front.style.width = val + '%';
-            bar.style.left = val + '%';
+            divider.style.left = val + '%';
         });
     </script>
 </body>
