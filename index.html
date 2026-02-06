@@ -43,13 +43,13 @@
             <p class="subtitle">Deep Learning automation transforming historical PDF easements into vectorized spatial data.</p>
             <div class="slider-box">
                 <div class="slider-img back">
-                    <img src="before.jpg" alt="Legacy Archive">
-                </div>
-                <div class="slider-img front" id="front-image">
                     <img src="after.jpg" alt="Modern Vector">
                 </div>
+                <div class="slider-img front" id="front-image">
+                    <img src="before.jpg" alt="Legacy Archive">
+                </div>
                 <input type="range" min="0" max="100" value="50" class="slider-handle" id="range-slider">
-                <div class="slider-button" id="slider-button"></div>
+                <div class="slider-bar" id="slider-bar"></div>
             </div>
         </div>
     </section>
@@ -83,12 +83,13 @@
     <script>
         const slider = document.getElementById('range-slider');
         const front = document.getElementById('front-image');
-        const button = document.getElementById('slider-button');
+        const bar = document.getElementById('slider-bar');
         
         slider.addEventListener('input', (e) => {
             const val = e.target.value;
+            // This logic ensures 'before' is on the left and 'after' is revealed on the right
             front.style.width = val + '%';
-            button.style.left = val + '%';
+            bar.style.left = val + '%';
         });
     </script>
 </body>
