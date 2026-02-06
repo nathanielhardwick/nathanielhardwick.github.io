@@ -9,9 +9,9 @@
 <body>
     <header>
         <div class="container header-flex">
-            <div class="profile-block">
-                <img src="profile.jpg" alt="Nathaniel Hardwick" class="profile-pic">
-                <div class="logo-text">
+            <div class="brand">
+                <img src="profile.jpg" alt="Nathaniel Hardwick" class="avatar">
+                <div class="brand-text">
                     <h1>Nathaniel Hardwick, M.S.</h1>
                     <p>Geospatial Solutions Architect</p>
                 </div>
@@ -30,9 +30,9 @@
         <div class="container">
             <h2>Secure AI & Enterprise Geospatial Architecture</h2>
             <p>Bridging the gap between legacy infrastructure and sovereign, air-gapped intelligence.</p>
-            <div class="btn-group">
-                <a href="#services" class="btn-solid">View Services</a>
-                <a href="Capability_Statement.pdf" class="btn-line" download>Download Capability Statement</a>
+            <div class="cta-btns">
+                <a href="#services" class="btn-blue">View Services</a>
+                <a href="Capability_Statement.pdf" class="btn-outline" download>Download Capability Statement</a>
             </div>
         </div>
     </section>
@@ -42,13 +42,13 @@
             <h2 class="title">From Archive to Intelligence</h2>
             <p class="subtitle">Deep Learning automation transforming historical PDF easements into vectorized spatial data.</p>
             <div class="slider-box">
-                <div class="img-layer back-img">
+                <div class="slider-img back">
                     <img src="map-old.jpg" alt="Legacy Archive">
                 </div>
-                <div class="img-layer front-img" id="front-image">
+                <div class="slider-img front" id="front-image">
                     <img src="map-new.jpg" alt="Modern Vector">
                 </div>
-                <input type="range" min="0" max="100" value="50" class="slider-input" id="map-slider">
+                <input type="range" min="0" max="100" value="50" class="slider-handle" id="range-slider">
             </div>
         </div>
     </section>
@@ -56,7 +56,7 @@
     <section id="services" class="services">
         <div class="container">
             <h2 class="title">Consulting Services</h2>
-            <div class="card-grid">
+            <div class="grid">
                 <div class="card">
                     <h3>Sovereign AI Deployment</h3>
                     <p>On-premise LLM environments for sensitive utility data, ensuring zero cloud exposure.</p>
@@ -80,7 +80,7 @@
     </footer>
 
     <script>
-        const slider = document.getElementById('map-slider');
+        const slider = document.getElementById('range-slider');
         const front = document.getElementById('front-image');
         slider.addEventListener('input', (e) => {
             front.style.width = e.target.value + '%';
