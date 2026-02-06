@@ -49,6 +49,7 @@
                     <img src="after.jpg" alt="Modern Vector">
                 </div>
                 <input type="range" min="0" max="100" value="50" class="slider-handle" id="range-slider">
+                <div class="slider-button" id="slider-button"></div>
             </div>
         </div>
     </section>
@@ -82,8 +83,12 @@
     <script>
         const slider = document.getElementById('range-slider');
         const front = document.getElementById('front-image');
+        const button = document.getElementById('slider-button');
+        
         slider.addEventListener('input', (e) => {
-            front.style.width = e.target.value + '%';
+            const val = e.target.value;
+            front.style.width = val + '%';
+            button.style.left = val + '%';
         });
     </script>
 </body>
