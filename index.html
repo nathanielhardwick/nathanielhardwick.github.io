@@ -66,7 +66,7 @@
                     <h3>Enterprise GIS Strategy</h3>
                     <p>High-availability ArcGIS and PostGIS architecture for critical asset management.</p>
                 </div>
-                <div class="card">
+                <div class="card :last-child">
                     <h3>Infrastructure as Code</h3>
                     <p>Containerized stacks ensuring 100% parity across engineering teams.</p>
                 </div>
@@ -87,7 +87,6 @@
         
         slider.addEventListener('input', (e) => {
             const val = e.target.value;
-            // This logic ensures 'before' is on the left and 'after' is revealed on the right
             front.style.width = val + '%';
             bar.style.left = val + '%';
         });
