@@ -26,7 +26,7 @@
     <section class="hero">
         <div class="container">
             <h1>Secure AI & Enterprise Geospatial Architecture</h1>
-            <p>Bridging the gap between legacy utility infrastructure and sovereign, air-gapped intelligence.</p>
+            <p>Bridging the gap between legacy infrastructure and sovereign, air-gapped intelligence.</p>
             <div class="cta-buttons">
                 <a href="#services" class="btn-primary">View Services</a>
                 <a href="Capability_Statement.pdf" class="btn-secondary" download>Download Capability Statement</a>
@@ -36,51 +36,47 @@
 
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2 class="section-title">From Archive to Intelligence</h2>
-            <p class="section-subtitle">Digitizing legacy utility infrastructure through Deep Learning.</p>
-            <div class="comparison-slider">
-                <div class="image-overlay">
-                    <img src="map-new.jpg" alt="Modern Digital Map">
+            <h2>From Archive to Intelligence</h2>
+            <p>Deep Learning automation transforming historical PDF easements into vectorized spatial data.</p>
+            <div class="slider-container">
+                <div class="img-wrapper background-img">
+                    <img src="map-old.jpg" alt="Legacy Map">
                 </div>
-                <div class="image-base">
-                    <img src="map-old.jpg" alt="Historical Paper Map">
+                <div class="img-wrapper foreground-img">
+                    <img src="map-new.jpg" alt="Digital Vector">
                 </div>
-                <input type="range" min="0" max="100" value="50" class="slider" id="map-slider">
+                <input type="range" min="1" max="100" value="50" class="slider" name='slider' id="slider">
+                <div class='slider-button'></div>
             </div>
         </div>
     </section>
 
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Specialized Consulting Services</h2>
+            <h2 class="section-title">Consulting Services</h2>
             <div class="service-grid">
                 <div class="service-card">
                     <h3>Sovereign AI Deployment</h3>
-                    <p>Engineering secure, on-premise Large Language Model (LLM) environments for sensitive data without cloud exposure.</p>
+                    <p>On-premise LLM environments for sensitive utility data, ensuring zero cloud exposure.</p>
                 </div>
                 <div class="service-card">
                     <h3>Enterprise GIS Strategy</h3>
-                    <p>Architecting high-availability Esri ArcGIS and PostGIS environments for critical asset management.</p>
+                    <p>High-availability ArcGIS and PostGIS architecture for critical asset management.</p>
                 </div>
                 <div class="service-card">
                     <h3>Infrastructure as Code</h3>
-                    <p>Deploying containerized geospatial stacks (Docker) to ensure 100% environment parity across teams.</p>
+                    <p>Containerized stacks (Docker) ensuring 100% parity across engineering teams.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Hardwick Analytics | Shawnee, OK | nathanielhardwick@gmail.com</p>
-        </div>
-    </footer>
-
     <script>
-        const slider = document.getElementById('map-slider');
-        const overlay = document.querySelector('.image-overlay');
+        const slider = document.getElementById('slider');
         slider.addEventListener('input', (e) => {
-            overlay.style.width = `${e.target.value}%`;
+            const sliderPos = e.target.value;
+            document.querySelector('.foreground-img').style.width = `${sliderPos}%`;
+            document.querySelector('.slider-button').style.left = `calc(${sliderPos}% - 18px)`;
         });
     </script>
 </body>
