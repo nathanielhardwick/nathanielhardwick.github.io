@@ -16,7 +16,7 @@
             <nav>
                 <ul>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#capabilities">Capabilities</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="mailto:nathanielhardwick@gmail.com">Contact</a></li>
                 </ul>
             </nav>
@@ -34,38 +34,37 @@
         </div>
     </section>
 
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">From Archive to Intelligence</h2>
+            <p class="section-subtitle">Digitizing legacy utility infrastructure through Deep Learning.</p>
+            <div class="comparison-slider">
+                <div class="image-overlay">
+                    <img src="map-new.jpg" alt="Modern Digital Map">
+                </div>
+                <div class="image-base">
+                    <img src="map-old.jpg" alt="Historical Paper Map">
+                </div>
+                <input type="range" min="0" max="100" value="50" class="slider" id="map-slider">
+            </div>
+        </div>
+    </section>
+
     <section id="services" class="services">
         <div class="container">
             <h2 class="section-title">Specialized Consulting Services</h2>
             <div class="service-grid">
                 <div class="service-card">
                     <h3>Sovereign AI Deployment</h3>
-                    <p>Engineering secure, on-premise Large Language Model (LLM) environments for sensitive data without cloud exposure[cite: 8, 19].</p>
+                    <p>Engineering secure, on-premise Large Language Model (LLM) environments for sensitive data without cloud exposure.</p>
                 </div>
                 <div class="service-card">
                     <h3>Enterprise GIS Strategy</h3>
-                    <p>Architecting high-availability Esri ArcGIS and PostGIS environments for critical asset management[cite: 16, 25].</p>
+                    <p>Architecting high-availability Esri ArcGIS and PostGIS environments for critical asset management.</p>
                 </div>
                 <div class="service-card">
                     <h3>Infrastructure as Code</h3>
-                    <p>Deploying containerized geospatial stacks (Docker) to ensure 100% environment parity across teams[cite: 20, 38].</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="capabilities" class="capabilities">
-        <div class="container">
-            <h2 class="section-title">Operational Impact</h2>
-            <div class="cap-list">
-                <div class="cap-item">
-                    <strong>Automated Intelligence:</strong> Reduced manual research time by 40% through custom OCR and RAG pipelines[cite: 21].
-                </div>
-                <div class="cap-item">
-                    <strong>Data Integrity:</strong> Tier-3 technical lead for complex database and integration failures[cite: 28, 29].
-                </div>
-                <div class="cap-item">
-                    <strong>Proven Scale:</strong> Over 15 years of experience modernizing fiber and electric utility infrastructure[cite: 6].
+                    <p>Deploying containerized geospatial stacks (Docker) to ensure 100% environment parity across teams.</p>
                 </div>
             </div>
         </div>
@@ -73,8 +72,16 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Hardwick Analytics | Shawnee, OK | nathanielhardwick@gmail.com [cite: 2]</p>
+            <p>&copy; 2026 Hardwick Analytics | Shawnee, OK | nathanielhardwick@gmail.com</p>
         </div>
     </footer>
+
+    <script>
+        const slider = document.getElementById('map-slider');
+        const overlay = document.querySelector('.image-overlay');
+        slider.addEventListener('input', (e) => {
+            overlay.style.width = `${e.target.value}%`;
+        });
+    </script>
 </body>
 </html>
